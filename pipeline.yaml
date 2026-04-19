@@ -1,0 +1,12 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: tax-pipeline
+spec:
+  tasks:
+    - name: install
+      taskRef:
+        name: npm-install
+    - name: test
+      taskRef:
+        name: jasmine-test
