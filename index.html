@@ -1,21 +1,65 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <meta charset="UTF-8">
   <title>Tax Calculator</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 40px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    label {
+      font-size: 20px;
+    }
+
+    input {
+      padding: 8px;
+      width: 300px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 8px 15px;
+      font-size: 16px;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Tax Calculator</h1>
+  <h1>Tax Calculator</h1>
 
-<label>Your Total Income:</label><br>
-<input id="income" type="number" placeholder="Enter income"><br><br>
+  <label>Your Total Income:</label><br>
+  <input id="income" type="number" placeholder="Enter income" />
 
-<button onclick="calculateTax()">Calculate</button>
+  <br>
+  <button onclick="calculateTax()">Calculate</button>
 
-<h3>Tax Due:</h3>
-<p id="result"></p>
+  <h2>Tax Due:</h2>
+  <p id="result"></p>
 
-<script src="taxCalculator.js"></script>
+  <script>
+    function calculateTax() {
+      let income = document.getElementById("income").value;
+      let tax = income * 0.1;
+
+      document.getElementById("result").innerText = "₹" + tax;
+    }
+  </script>
 
 </body>
+
 </html>
